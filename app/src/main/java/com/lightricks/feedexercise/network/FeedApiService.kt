@@ -1,5 +1,9 @@
 package com.lightricks.feedexercise.network
 
-/**
- * todo: add the FeedApiService interface and the Retrofit and Moshi code here
- */
+import retrofit2.Response
+import retrofit2.http.GET
+
+interface FeedApiService {
+    @GET("Android/demo/feed.json")
+    suspend fun getFeed(): Response<Feed>
+}
