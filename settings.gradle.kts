@@ -1,3 +1,8 @@
+@file:Suppress("UnstableApiUsage")
+
+enableFeaturePreview("VERSION_CATALOGS")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -5,15 +10,15 @@ pluginManagement {
         mavenCentral()
     }
 }
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
-        maven { url "https://jitpack.io" }
+        maven(url = "https://jitpack.io")
     }
 }
 rootProject.name = "FeedExercise"
-include ':app'
+
+includeBuild("build-logic")
+include(":app")
