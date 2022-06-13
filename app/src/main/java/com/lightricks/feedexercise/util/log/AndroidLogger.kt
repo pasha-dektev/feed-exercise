@@ -1,11 +1,14 @@
 package com.lightricks.feedexercise.util.log
 
 import android.util.Log
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Android implementation for Logger interface
  */
-class AndroidLogger : Logger {
+@Singleton
+class AndroidLogger @Inject constructor() : Logger {
     override fun debug(tag: String, msg: String, throwable: Throwable?) {
         Log.d(tag, msg, throwable)
     }

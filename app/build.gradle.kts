@@ -21,6 +21,14 @@ android {
         }
     }
 
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.composeVersion.get()
+    }
+
     buildTypes {
         getByName("debug").apply {
             isDebuggable = true
@@ -53,6 +61,14 @@ dependencies {
         kapt(compiler)
     }
     // Compose
+    with(libs.compose) {
+        implementation(ui)
+        implementation(ui.toolingPreview)
+        implementation(material)
+        implementation(foundation)
+    }
+    implementation(libs.activity.compose)
+    implementation(libs.accompanist.switpeToRefresh)
     // Coroutines
     implementation(libs.coroutines)
     // Network
@@ -63,5 +79,9 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.bundles.mockito)
     testImplementation(libs.room.testing)
+
     androidTestImplementation(libs.bundles.androidXTest)
+
+    debugImplementation(libs.compose.ui.tooling)
+    debugImplementation(libs.compose.ui.testManifest)
 }

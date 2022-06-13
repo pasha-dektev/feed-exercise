@@ -6,8 +6,11 @@ import com.lightricks.feedexercise.data.toFeedItemEntity
 import com.lightricks.feedexercise.database.FeedDao
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
+import javax.inject.Singleton
 
-internal class RoomDataSource(
+@Singleton
+internal class RoomFeedDataSource @Inject constructor(
     private val dao: FeedDao
 ): LocalFeedDataSource, LocalFeedDataStore {
 

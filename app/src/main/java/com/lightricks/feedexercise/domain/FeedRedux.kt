@@ -28,8 +28,6 @@ object FeedRedux {
      * Messages for reducing state
      */
     sealed class Message {
-        object Reload : Message()
-
         object Refresh : Message()
 
         sealed class FeedLoading : Message() {
@@ -68,7 +66,7 @@ object FeedRedux {
     }
 
     private fun reduceError(state: State.Error, msg: Message): Return<State, Effect> = when (msg) {
-        is Message.Reload -> State.Loading withEffect Effect.GetFeed
+        is Message.Refresh -> State.Loading withEffect Effect.GetFeed
         else -> state.pure()
     }
 

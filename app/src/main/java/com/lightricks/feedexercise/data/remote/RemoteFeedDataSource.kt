@@ -9,13 +9,18 @@ import com.lightricks.feedexercise.util.result.toFailureResult
 import com.lightricks.feedexercise.util.result.toSuccessResult
 import java.net.UnknownHostException
 import com.lightricks.feedexercise.util.result.Result
+import javax.inject.Inject
+import javax.inject.Named
+import javax.inject.Singleton
 
 interface RemoteFeedDataSource {
     suspend fun getFeed(): Result<FeedError, FeedSuccess>
 }
 
-internal class RetrofitFeedDataSource(
+@Singleton
+internal class RetrofitFeedDataSource @Inject constructor(
     private val apiService: FeedApiService,
+    @Named("ThumbnailImageBaseUrl")
     private val thumbnailBaseUrlProvider: UrlProvider
 ) : RemoteFeedDataSource {
     override suspend fun getFeed(): Result<FeedError, FeedSuccess> {

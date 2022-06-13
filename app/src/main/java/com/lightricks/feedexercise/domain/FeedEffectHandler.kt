@@ -8,8 +8,9 @@ import com.lightricks.feedexercise.util.mvi.CoroutineMessageEmitter
 import com.lightricks.feedexercise.util.result.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-internal class FeedEffectHandler(
+internal class FeedEffectHandler @Inject constructor(
     private val feedRepository: FeedRepository
 ) : CoroutineEffectHandler<Effect, Message>, CoroutineMessageEmitter<Message> {
     override suspend fun handle(eff: Effect): Message? {
