@@ -2,4 +2,6 @@
     <string name="app_name">Feed Exercise</string>
     <string name="feed_empty_text">No data available</string>
     <string name="network_error">Could not load data from the internet</string>
+    <string name="unknown_error">Something went wrong</string>
+    <string name="retry_button">Retry</string>
 </resources>

@@ -7,6 +7,8 @@ import com.lightricks.feedexercise.domain.FeedError
 import com.lightricks.feedexercise.util.result.Result
 import com.lightricks.feedexercise.util.result.toSuccessResult
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * This is our data layer abstraction. Users of this class don't need to know
@@ -17,7 +19,8 @@ interface FeedRepository {
     suspend fun getFeed(): Flow<List<FeedItem>>
 }
 
-internal class FeedRepositoryImpl(
+@Singleton
+internal class FeedRepositoryImpl @Inject constructor(
     private val localFeedDataSource: LocalFeedDataSource,
     private val localFeedDataStore: LocalFeedDataStore,
     private val remoteFeedDataSource: RemoteFeedDataSource

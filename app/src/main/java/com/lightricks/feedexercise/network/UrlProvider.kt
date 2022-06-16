@@ -1,5 +1,8 @@
 package com.lightricks.feedexercise.network
 
+import javax.inject.Inject
+import javax.inject.Singleton
+
 interface UrlProvider {
     val url: String
 }
@@ -7,13 +10,13 @@ interface UrlProvider {
 /**
  * Base url provider for Retrofit
  */
-class RetrofitBaseUrlProvider : UrlProvider {
-    override val url: String = " https://assets.swishvideoapp.com/"
+class RetrofitBaseUrlProvider @Inject constructor() : UrlProvider {
+    override val url: String = "https://assets.swishvideoapp.com/"
 }
 
 /**
  * Base url provider for Image Loading
  */
-class ThumbnailImageBaseUrlProvider : UrlProvider {
-    override val url: String = " https://assets.swishvideoapp.com/Android/demo/catalog/thumbnails/"
+class ThumbnailImageBaseUrlProvider @Inject constructor() : UrlProvider {
+    override val url: String = "https://assets.swishvideoapp.com/Android/demo/catalog/thumbnails/"
 }
