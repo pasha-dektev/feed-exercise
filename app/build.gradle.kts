@@ -78,8 +78,10 @@ dependencies {
     // Testing frameworks
     testImplementation(libs.junit)
     testImplementation(libs.bundles.mockito)
-    testImplementation(libs.room.testing)
+    testImplementation(libs.coroutines.testing)
 
+    androidTestImplementation(libs.room.testing)
+    androidTestImplementation(libs.coroutines.testing)
     androidTestImplementation(libs.bundles.androidXTest)
 
     debugImplementation(libs.compose.ui.tooling)

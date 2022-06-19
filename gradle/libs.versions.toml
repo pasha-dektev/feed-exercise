@@ -65,6 +65,7 @@ mockito = { module = "org.mockito:mockito-core", version.ref = "mockitoVersion" 
 mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockitoVersion" }
 mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version = "4.0.0" }
 room-testing = { module = "androidx.room:room-testing", version.ref = "roomVersion" }
+coroutines-testing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutinesVersion" }
 
 # gradle plugins artifacts
 kotlinGradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
@@ -75,4 +76,4 @@ core = ["androidXCore", "appCompat"]
 room = ["room", "room-runtime"]
 network = ["retrofit", "retrofit-serializationConverter", "okHttp", "okHttp-loggingInterceptor"]
 mockito = ["mockito", "mockito-inline", "mockito-kotlin"]
-androidXTest = ["testCore", "testExtJunit", "testExtTruth"]
+androidXTest = ["testRunner", "testRules", "testCore", "testExtJunit", "testExtTruth"]
