@@ -1,0 +1,36 @@
+[versions]
+
+kotlinVersion = "1.6.21"
+androidGradlePluginVersion = "7.1.1"
+lifecycleVersion = "2.4.1"
+appCompatVersion = "1.4.2"
+androidXCoreVersion = "1.8.0"
+swipeRefreshVersion = "1.1.0"
+materialVersion = "1.6.1"
+glideVersion = "4.13.0"
+glideCompilerVersion = "4.12.0"
+
+# tests
+testRunnerVersion = "1.2.0"
+testCoreVersion = "1.4.0"
+
+[libraries]
+androidXCore = { module = "androidx.core:core-ktx", version.ref = "androidXCoreVersion" }
+swipeRefresh = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swipeRefreshVersion" }
+appCompat = { module = "androidx.appcompat:appcompat", version.ref = "appCompatVersion" }
+lifecycle-viewModel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleVersion" }
+lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleVersion" }
+material = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glideVersion" }
+glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glideCompilerVersion" }
+
+# tests
+kotlinTestJUnit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlinVersion" }
+testCore = { module = "androidx.test:core", version.ref = "testCoreVersion" }
+testRunner = { module = "androidx.test:runner", version.ref = "testRunnerVersion" }
+testExtTruth = { module = "androidx.test.ext:truth", version = "1.1.3" }
+testExtJunit = { module = "androidx.test.ext:junit", version = "1.4.0" }
+
+# gradle plugins artifacts
+kotlinGradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
+androidGradle = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePluginVersion" }

@@ -4,7 +4,6 @@
 .externalNativeBuild
 .cxx
 /build
-/gradle
 /captures
 /local.properties
 /.idea
